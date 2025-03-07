@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM</title>
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header class="headerColor flex">
+      <div class="container flex headerInfo">
+        <img src="img/Group 112.png" alt="logo" class="logo" />
+        <input
+          id="searchBox"
+          type="text"
+          placeholder="Введите запрос"
+          class="headerInput"
+        />
+      </div>
+    </header>
+    <main class="container">
+      <div class="mainInfo">
+        <h1 class="mainTitle">Клиенты</h1>
+        <div class="tableContainer">
+          <table class="table">
+            <thead class="tableTitle">
+              <tr>
+                <th scope="col" class="IDDefH" id="IDCol">ID</th>
+                <th scope="col" class="nameDefH" id="nameCol">
+                  Фамилия Имя Отчество <span class="AtoZ">А-Я</span>
+                </th>
+                <th scope="col" class="cDateH" id="cDateCol">
+                  Дата и время создания
+                </th>
+                <th scope="col" id="cTimeCol"></th>
+                <th scope="col" class="uDateH" id="uDateCol">
+                  Последние изменения
+                </th>
+                <th scope="col" id="uTimeCol"></th>
+                <th scope="col" class="linkBoxH">Контакты</th>
+                <th scope="col" class="changeDefH">Действия</th>
+                <th scope="col" class="deleteDefH" id="delCol"></th>
+              </tr>
+            </thead>
+            <tbody class="tbody" id="tbody">
+              <tr id="row">
+                <td scope="row" class="IDDef">123455</td>
+                <td class="nameDef">Скворцов Денис Юрьевич</td>
+                <td class="cDate">21.02.2021</td>
+                <td class="cTime"></td>
+                <td class="uDate">21.02.2021</td>
+                <td class="uTime"></td>
+                <td class="linkBox">22</td>
+                <td class="changeDef">Изменить</td>
+                <td class="deleteDef">Удалить</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex btnWrap">
+          <button class="add bttnReset" id="add" aria-label="Добавить клиента">
+            Добавить клиента
+          </button>
+        </div>
+        <div class="modalAdd" id="modalAdd" hidden>
+          <form id="newForm">
+            <div class="modalHeader flex">
+              <h2 class="modalTitle">Новый клиент</h2>
+              <button
+                type="button"
+                class="bttnReset btnClose"
+                aria-label="Закрыть"
+                id="btnClose"
+              ></button>
+            </div>
+            <div class="modalBody">
+              <input
+                class="inputForm"
+                type="text"
+                name="surname"
+                id="surname"
+                placeholder="Фамилия*"
+                required
+              />
+              <input
+                class="inputForm"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Имя*"
+                required
+              />
+              <input
+                class="inputForm inputFormLast"
+                type="text"
+                name="lastName"
+                id="lastName"
+                placeholder="Отчество"
+              />
+            </div>
+            <div class="contactAddWrap flex">
+              <div id="contactAddWrap1"></div>
+              <button class="bttnReset btnFormContact" id="addContactBtn1">
+                Добавить контакт
+              </button>
+            </div>
+            <div class="formFooter flex">
+              <button class="bttnReset btnForm" id="saveBtn" type="submit">
+                Сохранить
+              </button>
+              <a href="#" class="formlink" aria-label="Закрыть" id="linkClose"
+                >Отмена</a
+              >
+            </div>
+          </form>
+        </div>
+        <div class="modalAdd" id="modalChange" hidden>
+          <form id="ChangeForm">
+            <div class="modalHeader flex">
+              <div class="flex modalTop">
+                <h2 class="modalTitle">Изменить данные</h2>
+                <span class="modalID" id="modalID"></span>
+              </div>
+              <button
+                type="button"
+                class="bttnReset btnClose"
+                aria-label="Закрыть"
+                id="btnCloseC"
+              ></button>
+            </div>
+            <div class="modalBody">
+              <input
+                class="inputForm"
+                type="text"
+                name="surname"
+                id="surnameC"
+                placeholder="Фамилия*"
+              />
+              <input
+                class="inputForm"
+                type="text"
+                name="name"
+                id="nameC"
+                placeholder="Имя*"
+              />
+              <input
+                class="inputForm inputFormLast"
+                type="text"
+                name="lastName"
+                id="lastNameC"
+                placeholder="Отчество"
+              />
+            </div>
+            <div class="contactAddWrap flex">
+              <div id="contactAddWrap"></div>
+              <!-- <div class="addContact flex">
+                    <select name="typeOfContact" class="typeOfContact">
+                      <option value="Телефон" selected>Телефон</option>
+                      <option value="Доп. телефон">Доп. телефон</option>
+                      <option value="Email">Email</option>
+                      <option value="Vk">Vk</option>
+                      <option value="Facebook">Facebook</option>
+                      <option value="Другое">Другое</option>
+                    </select>
+                    <input type="text" name="contact" placeholder="Введите данные контакта" class="inputContact"/>
+                  </div> -->
+              <button
+                class="bttnReset btnFormContact"
+                type="button"
+                id="addContactBtn"
+              >
+                Добавить контакт
+              </button>
+            </div>
+            <div class="formFooter flex">
+              <button class="bttnReset btnForm" id="saveBtnC" type="submit">
+                Сохранить
+              </button>
+              <a href="#" class="formlink" aria-label="Закрыть" id="linkCloseC"
+                >Удалить клиента</a
+              >
+            </div>
+          </form>
+        </div>
+        <div class="modalDel" id="modalDel" hidden>
+          <div class="modalHeader flex">
+            <h2 class="modalTitle modalTitleDel">Удалить клиента</h2>
+            <button
+              type="button"
+              class="bttnReset btnClose"
+              aria-label="Закрыть"
+              id="btnCloseDel"
+            ></button>
+          </div>
+          <div class="modalBody flex">
+            <p class="delText">
+              Вы действительно хотите удалить данного клиента?
+            </p>
+          </div>
+          <div class="formFooter flex">
+            <button class="bttnReset btnForm" id="DelBtn">Удалить</button>
+            <a href="#" class="formlink" aria-label="Закрыть" id="linkCloseDel"
+              >Отмена</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="overlay" id="overlay" hidden></div>
+  </body>
+</html>

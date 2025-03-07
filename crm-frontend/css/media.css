@@ -1,0 +1,92 @@
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .nameDefH::after {
+    left: 127px;
+    top: 29%;
+  }
+
+  .nameDef {
+    min-width: 200px;
+  }
+
+  .cDate {
+    padding-right: 25px;
+  }
+
+  .uDate {
+    padding-right: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .headerInput {
+    display: none;
+  }
+
+  .mainTitle {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24.51px;
+    text-align: left;
+  }
+
+  .tableContainer {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .modalAdd {
+    width: 300px;
+  }
+  .contactAddWrap {
+    width: 300px;
+  }
+
+  .addContact {
+    width: 270px;
+  }
+
+  .typeOfContact {
+    width: 110px;
+  }
+
+  .modalTop {
+    flex-wrap: wrap;
+  }
+
+  .modalID {
+    margin: 0;
+  }
+
+  .modalTitle {
+    margin-bottom: 5px;
+  }
+
+  .modalDel {
+    width: 300px;
+  }
+}
+
+@media (max-width: 420px) {
+  .headerColor {
+    height: 40px;
+  }
+
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+}
